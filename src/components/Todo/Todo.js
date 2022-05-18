@@ -9,6 +9,7 @@ const Todo = () => {
             .then(res => res.json())
             .then(data => setPosts(data))
     }, [posts])
+
     const handleAddTask = event => {
         event.preventDefault()
         const name = event.target.name.value;
@@ -39,11 +40,28 @@ const Todo = () => {
         fetch(url, {
             method: 'DELETE',
             headers: {
-                'Content-type': 'application/json'
+                'Content-Type': 'application/json',
             },
+            body: JSON.stringify({ id }),
         })
-            .then(res => res.json())
-            .then(res => console.log(res))
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+    }
+
+    const handleCompleted = (id, data) =>{
+        fetch(`http://localhost:5000/posts/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
     }
     return (
         <div>
@@ -55,6 +73,7 @@ const Todo = () => {
                                 key={post._id}
                                 post={post}
                                 handleDeleteItem={handleDeleteItem}
+                                handleCompleted = {handleCompleted}
                             ></TodoLists>)
                         }
                     </Col>

@@ -6,4 +6,5 @@
 .adding-task{
     margin-top: 25px;
     padding: 10px;
+    position: sticky;
 }

@@ -1,19 +1,31 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
-const TodoLists = ({ post, handleDeleteItem }) => {
-    const {_id, name, desc } = post;
+const TodoLists = ({ post, handleDeleteItem, handleCompleted }) => {
+    const { _id, name, desc, completed } = post;
+    const data = { completed: true };
     return (
         <Card className='mb-3 mt-4'>
-            <div>
             <Card.Header as="h5">Your Todo-Item</Card.Header>
-            </div>
+
             <Card.Body>
-                <Card.Title className='text-start'>{name}</Card.Title>
-                <Card.Text className='text-start'>
+                <div className='d-flex justify-content-between'>
+                    <Card.Title style={{
+                        textDecoration: completed ? 'line-through' : 'none'
+                    }} className='text-start'>{name}</Card.Title>
+                    <button className='text-danger'>
+                        <FontAwesomeIcon onClick={() => handleDeleteItem(_id)} icon={faTrash}></FontAwesomeIcon>
+                    </button>
+                </div>
+
+                <Card.Text style={{
+                    textDecoration: completed ? 'line-through' : 'none'
+                }} className='text-start'>
                     {desc}
                 </Card.Text>
-                <Button onClick={()=> handleDeleteItem(_id)} variant="primary">Completed</Button>
+                <Button onClick={() => handleCompleted(_id, data)} variant="primary">Completed</Button>
             </Card.Body>
         </Card>
     );
