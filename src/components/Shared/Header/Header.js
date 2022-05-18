@@ -18,9 +18,9 @@ const Header = () => {
                             <Nav.Link as={Link} to='todo' href="#link">Todo</Nav.Link>
                             {
                                 user ? 
-                                <Nav.Link onClick={()=> signOut()} as={Link} to='/'>SignOut</Nav.Link>
+                                <Nav.Link onClick={()=> signOut(auth)} as={Link} to='/'>SignOut</Nav.Link>
                                 :
-                                <Nav.Link as={Link} to='login' href="#link">Login</Nav.Link>
+                                <Nav.Link as={Link} to='/login' href="#link">Login</Nav.Link>
                             }
                         </Nav>
                     </Navbar.Collapse>

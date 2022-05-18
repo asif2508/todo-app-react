@@ -7,7 +7,7 @@
 .form-style{
     
     border: 1px solid black;
-    width: 40%;
+    width: 37%;
     border-radius: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     
@@ -34,7 +34,7 @@
     border: 1px solid black;
 }
 .login-disabled{
-    background-color: rgb(223, 152, 188);
+    background-color: rgb(152, 212, 212);
     border: 1px solid white;
     color: white;
     padding: 8px 12px;

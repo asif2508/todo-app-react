@@ -89,7 +89,7 @@ const Todo = () => {
                                     <p className='label-text'>Task Description</p>
                                     <Form.Control name='desc' placeholder='Task Description' as="textarea" rows={5} />
                                 </Form.Group>
-                                <input type="submit" value="ADD" className='btn btn-primary w-25' />
+                                <input type="submit" value="ADD" className='btn main-btn w-25' />
                             </form>
                         </div>
                     </Col>

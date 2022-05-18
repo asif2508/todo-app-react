@@ -15,8 +15,8 @@ const TodoLists = ({ post, handleDeleteItem, handleCompleted }) => {
                     <Card.Title style={{
                         textDecoration: completed ? 'line-through' : 'none'
                     }} className='text-start'>{name}</Card.Title>
-                    <button className='text-danger'>
-                        <FontAwesomeIcon onClick={() => handleDeleteItem(_id)} icon={faTrash}></FontAwesomeIcon>
+                    <button onClick={() => handleDeleteItem(_id)} className='main-btn'>
+                        <FontAwesomeIcon  icon={faTrash}></FontAwesomeIcon>
                     </button>
                 </div>
 
@@ -25,7 +25,7 @@ const TodoLists = ({ post, handleDeleteItem, handleCompleted }) => {
                 }} className='text-start'>
                     {desc}
                 </Card.Text>
-                <Button onClick={() => handleCompleted(_id, data)} variant="primary">Completed</Button>
+                <Button onClick={() => handleCompleted(_id, data)} className='main-btn'>Completed</Button>
             </Card.Body>
         </Card>
     );

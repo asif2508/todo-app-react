@@ -13,12 +13,15 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const navigate = useNavigate();
-    const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
     let location = useLocation();
 
     let from = location.state?.from?.pathname || "/";
     if (loading) {
         return <Loading></Loading>
+    }
+    if(user || user1){
+        navigate(from, { replace: true });
     }
     const handlesignIn = async event => {
         event.preventDefault();

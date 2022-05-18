@@ -2,16 +2,16 @@
     {
         "name": "Gym class",
         "desc": "At 5 pm, I have to go to gym after the class",
-        "completed": true
+        "completed": false
     },
     {
         "name": "have to go to bookstore",
-        "completed": true,
+        "completed": false,
         "desc": "After going to gym, I have to go to bookstore"
     },
     {
         "name": "meeting with boss",
         "desc": "at 7.30, I have meeting with boss",
-        "completed": true
+        "completed": false
     }
 ]
