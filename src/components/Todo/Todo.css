@@ -1,0 +1,9 @@
+.label-text{
+    text-align: left !important;
+    margin: 3px;
+    font-weight: bold;
+}
+.adding-task{
+    margin-top: 25px;
+    padding: 10px;
+}
