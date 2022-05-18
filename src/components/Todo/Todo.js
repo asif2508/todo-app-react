@@ -5,7 +5,7 @@ import './Todo.css';
 const Todo = () => {
     const [posts, setPosts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/posts')
+        fetch('https://powerful-reef-30073.herokuapp.com/posts')
             .then(res => res.json())
             .then(data => setPosts(data))
     }, [posts])
@@ -19,7 +19,7 @@ const Todo = () => {
             desc: desc,
             completed: false
         };
-        fetch('http://localhost:5000/posts', {
+        fetch('https://powerful-reef-30073.herokuapp.com/posts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const Todo = () => {
         event.target.reset();
     }
     const handleDeleteItem = id => {
-        const url = `http://localhost:5000/posts/${id}`;
+        const url = `https://powerful-reef-30073.herokuapp.com/posts/${id}`;
         fetch(url, {
             method: 'DELETE',
             headers: {
@@ -51,7 +51,7 @@ const Todo = () => {
     }
 
     const handleCompleted = (id, data) =>{
-        fetch(`http://localhost:5000/posts/${id}`, {
+        fetch(`https://powerful-reef-30073.herokuapp.com/posts/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

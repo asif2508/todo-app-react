@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const usePosts = () =>{
     const [posts, setPosts] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/posts')
+        fetch('https://powerful-reef-30073.herokuapp.com/posts')
         .then(res => res.json())
         .then(data => setPosts(data))
     },[])

@@ -25,7 +25,7 @@ const TodoLists = ({ post, handleDeleteItem, handleCompleted }) => {
                 }} className='text-start'>
                     {desc}
                 </Card.Text>
-                <Button onClick={() => handleCompleted(_id, data)} className='main-btn'>Completed</Button>
+                <button onClick={() => handleCompleted(_id, data)} className='main-btn'>Completed</button>
             </Card.Body>
         </Card>
     );
