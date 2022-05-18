@@ -7,6 +7,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Notfound from './components/Shared/NotFound/Notfound';
 import Header from './components/Shared/Header/Header';
+import RequiredAuth from './components/RequiredAuth/RequiredAuth';
 
 function App() {
   return (
@@ -14,7 +15,11 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/todo' element={<Todo></Todo>}></Route>
+        <Route path='/todo' element={
+          <RequiredAuth>
+            <Todo></Todo>
+          </RequiredAuth>
+        }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<Notfound></Notfound>}></Route>
